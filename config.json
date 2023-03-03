@@ -1,0 +1,75 @@
+{
+    "IDs": {
+        "serverId": ["1078816316598796300"],
+        "ownerIds": ["689173890450194434"],
+        "roles": {
+            "hr": "1078827933294137374",
+            "helper": "1078820137936883782",
+            "moderator": "1078820439784177754",
+            "administrator": "1078819593440731136",
+            "manager": "1078821262203302019",
+            "owner": "1078821715397853215",
+            "verified": "1078817965287415858",
+            "unverified": "1078817874120028272"
+        },
+        "me": "1079010095192617001",
+        "channels": {
+            "xpAllowed": [
+                "1078825142706262087",
+                "1078825198217859142",
+                "1078825490820903062",
+                "1078825858749452298",
+                "1078825953976926258",
+                "1078825811534168145"
+            ],
+            "logs": "1081258810968113315"
+        }
+    },
+    "embeds": {
+        "fail": {
+            "title": "An error occoured",
+            "color": "#db0d0d"
+        },
+        "success": {
+            "color": "#2ef007"
+        },
+        "animal": {
+            "color": "#10e3b2"
+        },
+        "ban": {
+            "title": "You have been banned from Hangout Hub.",
+            "color": "db0d0d"
+        },
+        "kick": {
+            "title": "You have been kicked from Hangout Hub.",
+            "color": "db0d0d"
+        },
+        "lb": {
+            "title": "Server Leaderboard",
+            "color": "#08c4ae"
+        },
+        "logs": {
+            "kick": {
+                "title": "User kicked."
+            },
+            "ban": {
+
+            },
+            "mute": {
+
+            },
+            "slowmode": {
+
+            },
+            "purge": {
+
+            },
+            "color": "#c4bb08"
+        }
+    },
+    "xp": {
+        "rankCommandBarColor": "#FFFFFF",
+        "maxXpPerMessage": "14",
+        "minXpPermMessage": "1"
+    }
+}
