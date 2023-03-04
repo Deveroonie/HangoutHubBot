@@ -1,4 +1,4 @@
-const { Client, IntentsBitField, Partials, ActivityType, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
+const { Client, ActivityType, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
 require("dotenv/config");
 const WOK = require("wokcommands");
 const path = require("path");
@@ -93,6 +93,13 @@ client.on("messageCreate", async m => {
         setTimeout(() => {
           talkedRecently.delete(m.author.id);
         }, 30000);
+    } else {
+      if(m.content == "dev/restart" && config.IDs.ownerIds.includes(m.author.id)) {
+        m.reply("Bot restarting!").then(() => {
+          process.exit()
+        })
+        
+      }
     }
   }
 
