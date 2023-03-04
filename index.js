@@ -16,7 +16,6 @@ client.db = db;
 
 const Levels = require("discord-xp");
 Levels.setURL(process.env.MONGO_URL);
-
 client.on("ready", () => {
   new WOK({
     client,
@@ -33,9 +32,7 @@ client.on("ready", () => {
   });
   console.log("DISCORD | Connected! ")
   client.user.setActivity('Deveroonie code me', { type: ActivityType.Watching });
-  db.once("ready", () => {
-    console.log("REDIS | Connected!")
-  })
+  
   if(!process.env.MONGO_URL) return;
 
   mongoose.connect(process.env.MONGO_URL, {
@@ -47,12 +44,10 @@ client.on("ready", () => {
     console.log("MONGO | Error!")
     console.log(err)
   })
-
-  
-
-
 });
-
+db.once("ready", () => {
+  console.log("REDIS | Connected!")
+})
 client.levels = Levels;
 
 client.on("interactionCreate", i => {
