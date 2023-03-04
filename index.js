@@ -93,13 +93,6 @@ client.on("messageCreate", async m => {
         setTimeout(() => {
           talkedRecently.delete(m.author.id);
         }, 30000);
-    } else {
-      if(m.content == "dev/restart" && config.IDs.ownerIds.includes(m.author.id)) {
-        m.reply("Bot restarting!").then(() => {
-          process.exit()
-        })
-        
-      }
     }
   }
 
