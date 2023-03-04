@@ -1,6 +1,7 @@
 {
     "IDs": {
-        "serverId": ["1078816316598796300"],
+        "serverId": "1078816316598796300",
+        "serverIdArray": ["1078816316598796300"],
         "ownerIds": ["689173890450194434"],
         "roles": {
             "hr": "1078827933294137374",
@@ -47,6 +48,9 @@
         "lb": {
             "title": "Server Leaderboard",
             "color": "#08c4ae"
+        },
+        "warningHistory": {
+            "color": "#057573"
         },
         "logs": {
             "kick": {

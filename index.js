@@ -8,6 +8,12 @@ const client = new Client({
   intents: 32767,
 });
 
+const mongoose = require("mongoose")
+const redis = require('quickredis-db')
+const db = redis.createClient(process.env.REDIS_URL)
+
+client.db = db;
+
 const Levels = require("discord-xp");
 Levels.setURL(process.env.MONGO_URL);
 
@@ -23,9 +29,28 @@ client.on("ready", () => {
       WOK.DefaultCommands.RequiredRoles,
       WOK.DefaultCommands.ToggleCommand
     ],
-    testServers: config.IDs.serverId,
+    testServers: config.IDs.serverIdArray,
   });
+  console.log("DISCORD | Connected! ")
   client.user.setActivity('Deveroonie code me', { type: ActivityType.Watching });
+  db.once("ready", () => {
+    console.log("REDIS | Connected!")
+  })
+  if(!process.env.MONGO_URL) return;
+
+  mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }).then(() => {
+    console.log("MONGO | Connected!")
+  }).catch((err) => {
+    console.log("MONGO | Error!")
+    console.log(err)
+  })
+
+  
+
+
 });
 
 client.levels = Levels;
