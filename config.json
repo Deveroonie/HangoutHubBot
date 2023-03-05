@@ -30,7 +30,8 @@
                 "category": "1081903358291488868",
                 "open": "1078823531082678292",
                 "transcripts": "1081903205966954506"
-            }
+            },
+            "suggestions": "1078823845277990922"
         }
     },
     "embeds": {
@@ -76,11 +77,26 @@
 
             },
             "color": "#c4bb08"
+        },
+        "suggestions": {
+            "suggestionsChannel": {
+                "title": "New Suggestion!",
+                "color": "#80006c"
+            },
+            "reply": {
+                "title": "Suggestion submitted!"
+            }
         }
     },
     "xp": {
         "rankCommandBarColor": "#FFFFFF",
         "maxXpPerMessage": "14",
         "minXpPermMessage": "1"
+    },
+    "emoji": {
+        "suggestions": {
+            "voteYes": "👍",
+            "voteNo": "👎"
+        }
     }
 }
