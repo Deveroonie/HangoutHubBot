@@ -13,8 +13,6 @@ const db = redis.createClient(process.env.REDIS_URL)
 
 client.db = db;
 
-const Levels = require("discord-xp");
-Levels.setURL(process.env.MONGO_URL);
 client.on("ready", () => {
   new WOK({
     client,
@@ -50,7 +48,6 @@ client.on("ready", () => {
 db.once("ready", () => {
   console.log("REDIS | Connected!")
 })
-client.levels = Levels;
 
 client.on("guildMemberAdd", mem => {
   mem.roles.add(config.IDs.roles.unverified)
