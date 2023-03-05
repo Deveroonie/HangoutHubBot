@@ -60,6 +60,9 @@
         "warningHistory": {
             "color": "#057573"
         },
+        "joke": {
+            "color": "#cfcb0a"
+        },
         "logs": {
             "kick": {
                 "title": "User kicked."
