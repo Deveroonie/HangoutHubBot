@@ -7,7 +7,6 @@ const Levels = require("discord-xp");
 Levels.setURL(process.env.MONGO_URL);
 
 module.exports = async(message, instance, client) => {
-    const Levels = client.Levels
     const m = message;
     if(m.author.bot) return;
       if(config.IDs.channels.xpAllowed.includes(m.channelId)) {
