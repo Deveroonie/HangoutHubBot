@@ -99,6 +99,12 @@
         },
         "8ball": {
             "color": "#c9c008"
+        },
+        "games": {
+            "hangman": {
+                "title": "Hangman Game",
+                "color": "#cf6808"
+            }
         }
     },
     "xp": {
