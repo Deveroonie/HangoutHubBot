@@ -93,6 +93,9 @@
                 "accepted": "#3fc908",
                 "rejected": "#c91208"
             }
+        },
+        "8ball": {
+            "color": "#c9c008"
         }
     },
     "xp": {
@@ -105,5 +108,20 @@
             "voteYes": "👍",
             "voteNo": "👎"
         }
-    }
+    },
+    "8ball": [
+        "Yes",
+        "No",
+        "Maybe",
+        "Decideley so",
+        "Decideley not",
+        "Outlook good",
+        "Outlook not good",
+        "When hell freezes over",
+        "When the ocean dries up",
+        "Why not",
+        "I don't know",
+        "Prehaps",
+        "Concentrate and ask again"
+    ]
 }
