@@ -2,7 +2,6 @@ const { ChannelType, ActionRowBuilder, ButtonBuilder, EmbedBuilder, ButtonStyle 
 const config = require("../../config.json")
 
 module.exports = async(interaction, instance) => {
-    console.log("recieved")
     const i = interaction;
     const ticketDb = require("../../db/TicketsSchema")
     if(!i.isButton()) return;
