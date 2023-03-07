@@ -88,6 +88,10 @@
             },
             "reply": {
                 "title": "Suggestion submitted!"
+            },
+            "colors": {
+                "accepted": "#3fc908",
+                "rejected": "#c91208"
             }
         }
     },
