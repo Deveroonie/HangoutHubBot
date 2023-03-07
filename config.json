@@ -63,6 +63,9 @@
         "joke": {
             "color": "#cfcb0a"
         },
+        "meme": {
+            "color": "#cfcb0a"
+        },
         "logs": {
             "kick": {
                 "title": "User kicked."
