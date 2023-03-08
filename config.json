@@ -110,6 +110,14 @@
                 "color": "#781205",
                 "description": "Click on the buttons to reveal blocks. Be sure to avoid mines!"
             }
+        },
+        "afk": {
+            "set": {
+                "title": "Successfully set your AFK!"
+            },
+            "userPingedIsAfk": {
+                "color": "#f5b042"
+            }
         }
     },
     "xp": {
@@ -137,5 +145,6 @@
         "I don't know",
         "Prehaps",
         "Concentrate and ask again"
-    ]
+    ],
+    "afkBypassPrefix": ">"
 }
