@@ -13,7 +13,9 @@
             "verified": "1078817965287415858",
             "unverified": "1078817874120028272",
             "everyone": "1078816316598796300",
-            "ticketaccess": "1081967641138315345"
+            "ticketaccess": "1081967641138315345",
+            "startgw": "1083077334640382032",
+            "elavatedgw": "1083077405230506085"
         },
         "me": "1079010095192617001",
         "channels": {
@@ -117,6 +119,20 @@
             },
             "userPingedIsAfk": {
                 "color": "#f5b042"
+            }
+        },
+        "giveaways": {
+            "startSucc": {
+                "title": "Successfully started giveaway!"
+            },
+            "endSucc": {
+                "title": "Successfully ended giveaway!"
+            },
+            "deleteSucc": {
+                "title": "Successfully deleted giveaway!"
+            },
+            "rerollSucc": {
+                "title": "Successfully rerolled giveaway!"
             }
         }
     },

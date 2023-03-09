@@ -11,8 +11,7 @@ const mongoose = require("mongoose")
 const redis = require('quickredis-db')
 const db = redis.createClient(process.env.REDIS_URL)
 
-client.db = db;
-
+require("./systems/GiveawaySys")(client)
 client.on("ready", () => {
   new WOK({
     client,
