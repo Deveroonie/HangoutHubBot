@@ -12,8 +12,6 @@ module.exports = {
     type: CommandType.SLASH,
     testOnly: true,
     callback: async({ client, interaction }) => {
-        const name = config.botInfo.name
-        const icon = client.user.displayAvatarURL()
         var totalSeconds = client.uptime / 1000
         const days = Math.floor(totalSeconds / 86400)
         totalSeconds %= 86400
