@@ -134,6 +134,9 @@
             "rerollSucc": {
                 "title": "Successfully rerolled giveaway!"
             }
+        },
+        "enlarge": {
+            "color": "#0a948d"
         }
     },
     "xp": {
