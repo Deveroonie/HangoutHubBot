@@ -3,7 +3,7 @@ const { CommandType } = require("wokcommands")
 
 const config = require("../../config.json")
 
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js")
+const { EmbedBuilder } = require("discord.js")
 
 module.exports = {
 
