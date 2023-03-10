@@ -1,4 +1,8 @@
 {
+    "botInfo": {
+        "name": "Hangout Hub",
+        "id": "1079010095192617001"
+    },
     "IDs": {
         "serverId": "1078816316598796300",
         "serverIdArray": ["1078816316598796300"],
@@ -136,6 +140,10 @@
             }
         },
         "enlarge": {
+            "color": "#0a948d"
+        },
+        "botInfo": {
+            "title": "Bot Info",
             "color": "#0a948d"
         }
     },
