@@ -18,6 +18,12 @@ client.on("ready", () => {
     commandsDir: path.join(__dirname, "commands"),
     events: {
     dir: path.join(__dirname, "events"),
+    interactionCreate: {
+      isButton: (interaction) => interaction.isButton(),
+    },
+    messageCreate: {
+      isHuman: (message) => !message.author.bot,
+    }
     },
     disabledDefaultCommands: [
       WOK.DefaultCommands.ChannelCommand,

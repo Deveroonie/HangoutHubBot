@@ -1,10 +1,9 @@
 const { EmbedBuilder, AttachmentBuilder } = require("discord.js")
-const ticketDb = require("../../db/TicketsSchema")
+const ticketDb = require("../../../db/TicketsSchema")
 const { createTranscript } = require("discord-html-transcripts")
-const config = require("../../config.json")
+const config = require("../../../config.json")
 module.exports = async(interaction, instance) => {
     const i = interaction;
-  if(!i.isButton()) return;
   if(!["close","lock","unlock"].includes(i.customId)) return;
 
   ticketDb.findOne({ChannelID: i.channel.id}, async(err,data) => {

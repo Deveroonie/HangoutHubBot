@@ -1,8 +1,7 @@
-const config = require("../../config.json")
-const DB = require("../../db/AFKSchema")
+const config = require("../../../config.json")
+const DB = require("../../../db/AFKSchema")
 const { EmbedBuilder } = require("discord.js")
 module.exports = async(message, instance) => {
-    if(message.author.bot) return;
     await DB.deleteOne({GuildID: message.guild.id, UserID: message.author.id})
     
     if(message.mentions.members.size) {

@@ -1,10 +1,9 @@
 const { ChannelType, ActionRowBuilder, ButtonBuilder, EmbedBuilder, ButtonStyle } = require("discord.js")
-const config = require("../../config.json")
+const config = require("../../../config.json")
 
 module.exports = async(interaction, instance) => {
     const i = interaction;
-    const ticketDb = require("../../db/TicketsSchema")
-    if(!i.isButton()) return;
+    const ticketDb = require("../../../db/TicketsSchema")
     if(!["report", "gwc", "other"].includes(i.customId)) return;
   
     const tId = Math.floor(Math.random() * 9000 + 1000) 

@@ -1,4 +1,4 @@
-const config = require("../../config.json")
+const config = require("../../../config.json")
 const talkedRecently = new Set();
 
 require("dotenv/config")
@@ -8,7 +8,6 @@ Levels.setURL(process.env.MONGO_URL);
 
 module.exports = async(message, instance, client) => {
     const m = message;
-    if(m.author.bot) return;
       if(config.IDs.channels.xpAllowed.includes(m.channelId)) {
         if (!m.guild) return;
         if (m.author.bot) return;
