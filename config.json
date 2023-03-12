@@ -173,6 +173,10 @@
             "succ": {
                 "title": "Successfully unlocked channel!"
             }
+        },
+        "iplookup": {
+            "title": "Your IP lookup",
+            "color": "#0a948d"
         }
     },
     "xp": {
