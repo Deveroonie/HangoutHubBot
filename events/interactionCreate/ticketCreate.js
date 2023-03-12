@@ -21,6 +21,10 @@ module.exports = async(interaction, instance) => {
         {
           id: config.IDs.roles.everyone,
           deny: ["SendMessages", "ViewChannel", "ReadMessageHistory"]
+        },
+        {
+          id: config.IDs.roles.ticketaccess,
+          allow: ["SendMessages", "ViewChannel", "ReadMessageHistory"]
         }
       ]
     }).then(async(channel) => {

@@ -14,13 +14,8 @@ module.exports = async(interaction, instance) => {
       case "lock": {
         if(data.Locked == true) return i.reply("The ticket is alredy locked.")
         await ticketDb.updateOne({ChannelID: i.channel.id}, {Locked: true})
-        i.channel.edit({
-          permissionOverwrites: [
-            {
-              id: i.user.id,
-              deny: ["SendMessages"]
-            }
-          ]
+        i.channel.permissionOverwrites.create(data.MemberID, {
+          "SendMessages": false
         })
         return interaction.reply("This ticket has been locked. Only administrators can unlock it.")
       }
@@ -36,13 +31,8 @@ module.exports = async(interaction, instance) => {
 
       if(data.Locked == false) return i.reply("The ticket is alredy unlocked.")
         await ticketDb.updateOne({ChannelID: i.channel.id}, {Locked: false})
-        i.channel.edit({
-          permissionOverwrites: [
-            {
-              id: i.user.id,
-              allow: ["SendMessages"]
-            }
-          ]
+        i.channel.permissionOverwrites.create(data.MemberID, {
+          "SendMessages": true
         })
         return interaction.reply("This ticket has been unlocked.")    
 }
