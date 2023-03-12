@@ -157,6 +157,22 @@
         },
         "pollSucc": {
             "title": "Successfully started poll!"
+        },
+        "lock": {
+            "channel": {
+                "title": "This channel has been locked by an administrator."
+            },
+            "succ": {
+                "title": "Successfully locked channel!"
+            }
+        },
+        "unlock": {
+            "channel": {
+                "title": "This channel has been unlocked by an administrator."
+            },
+            "succ": {
+                "title": "Successfully unlocked channel!"
+            }
         }
     },
     "xp": {
