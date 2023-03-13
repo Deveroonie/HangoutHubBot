@@ -2,6 +2,7 @@ const config = require("../../../config.json")
 const DB = require("../../../db/SuggestSchema")
 const { EmbedBuilder } = require("discord.js")
 module.exports = async(interaction, instance) => {
+    if(!["accept-sug", "deny-sug"].includes(interaction.customId)) return;
     if(!interaction.member.roles.cache.has(config.IDs.roles.manager)) {
         const rolesErr = new EmbedBuilder()
         .setTitle(config.embeds.fail.title)

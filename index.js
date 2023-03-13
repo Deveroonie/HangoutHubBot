@@ -57,4 +57,20 @@ db.once("ready", () => {
 client.on("guildMemberAdd", mem => {
   mem.roles.add(config.IDs.roles.unverified)
 })
+//client.on("messageCreate", m => {
+//  if(!m.content == "devsendverif") return;
+//  const row = new ActionRowBuilder()
+//  .addComponents(
+//    new ButtonBuilder()
+//    .setLabel("Verify")
+//    .setCustomId("verif")
+//    .setStyle(ButtonStyle.Success)
+//  )
+//
+//  const e = new EmbedBuilder()
+//  .setTitle("Click the button below to get access to the server!")
+//  .setColor(config.embeds.success.color)
+//
+//  m.channel.send({embeds: [e], components: [row]})
+//})
 client.login(process.env.TOKEN);
