@@ -1,7 +1,7 @@
-const { Client, ActivityType, ActionRowBuilder, ButtonBuilder, ButtonStyle, ButtonInteraction, PermissionOverwriteManager, InteractionCollector, ChannelType, PermissionOverwrites, EmbedBuilder } = require("discord.js");
-require("dotenv/config");
-const WOK = require("wokcommands");
-const path = require("path");
+const { Client, ActivityType } = require("discord.js")
+require("dotenv/config")
+const WOK = require("wokcommands")
+const path = require("path")
 const config = require("./config.json")
 const client = new Client({
   intents: 32767,
@@ -35,10 +35,26 @@ client.on("ready", () => {
     ],
     testServers: config.IDs.serverIdArray,
   });
-  console.log("DISCORD | Connected! ")
-  client.user.setActivity('Deveroonie code me', { type: ActivityType.Watching });
-  
-  if(!process.env.MONGO_URL) return;
+  console.log("DISCORD | Connected!");
+  const statuses = [
+    "Hangout Hub",
+    "#lounge",
+    `${client.users.cache.size} members`,
+    "Deveroonie struggle to code me",
+    "YouTube",
+    "Fun fact: this is the last status!"
+  ]
+  const updateDelay = 10; 
+  let currentIndex = 0;
+  setInterval(() => {
+    const activity = statuses[currentIndex];
+
+  client.user.setActivity(activity, { type: ActivityType.Watching });
+  currentIndex = currentIndex >= statuses.length - 1 
+      ? 0
+      : currentIndex + 1;
+  }, updateDelay * 1000);
+  if (!process.env.MONGO_URL) return;
 
   mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -52,10 +68,6 @@ client.on("ready", () => {
 });
 db.once("ready", () => {
   console.log("REDIS | Connected!")
-})
-
-client.on("guildMemberAdd", mem => {
-  mem.roles.add(config.IDs.roles.unverified)
 })
 //client.on("messageCreate", m => {
 //  if(!m.content == "devsendverif") return;

@@ -7,9 +7,7 @@ const db = require("../../../db/WarningSchema")
 const types = require("../../../types")
 
 module.exports = {
-
     description: "Warn a user.",
-  
     type: CommandType.SLASH,
     testOnly: true,
 
@@ -20,10 +18,7 @@ module.exports = {
             type: types.user,
             required: true
         },
-        
     ],
-    
-  
     callback: ({ client, interaction }) => {
         const executor = interaction.user
         const executorMember = interaction.member 
