@@ -36,18 +36,11 @@ client.on("ready", () => {
     testServers: config.IDs.serverIdArray,
   });
   console.log("DISCORD | Connected!");
-  const statuses = [
-    "Hangout Hub",
-    "#lounge",
-    `${client.users.cache.size} members`,
-    "Deveroonie struggle to code me",
-    "YouTube",
-    "Fun fact: this is the last status!"
-  ]
-  const updateDelay = 10; 
+  const statuses = config.changingStatus.statuses
+  const updateDelay = config.changingStatus.delay; 
   let currentIndex = 0;
   setInterval(() => {
-    const activity = statuses[currentIndex];
+    const activity = statuses[currentIndex].replace("{mc}", client.users.cache.size)
 
   client.user.setActivity(activity, { type: ActivityType.Watching });
   currentIndex = currentIndex >= statuses.length - 1 

@@ -205,5 +205,16 @@
         "Prehaps",
         "Concentrate and ask again"
     ],
-    "afkBypassPrefix": ">"
+    "afkBypassPrefix": ">",
+    "changingStatus": {
+        "statuses": [
+            "Hangout Hub",
+            "#lounge",
+            "{mc} members",
+            "Deveroonie struggle to code me",
+            "YouTube",
+            "Fun fact: this is the last status!"
+          ],
+          "delay": 7
+    }
 }
