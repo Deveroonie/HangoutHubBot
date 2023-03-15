@@ -9,7 +9,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-      time: "09:00"
+      time: "10:00"
       timezone: "Europe/London"
     commit-message:
       prefix: "MINOR | "
