@@ -181,8 +181,9 @@
     },
     "xp": {
         "rankCommandBarColor": "#FFFFFF",
-        "maxXpPerMessage": "14",
-        "minXpPermMessage": "1"
+        "maxXpPerMessage": "25",
+        "minXpPermMessage": "5",
+        "gainDelay": "30"
     },
     "emoji": {
         "suggestions": {

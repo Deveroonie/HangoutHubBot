@@ -26,6 +26,6 @@ module.exports = async(message, instance, client) => {
     
           setTimeout(() => {
             talkedRecently.delete(m.author.id);
-          }, 30000);
+          }, config.xp.gainDelay * 1000);
       }
     }
