@@ -3,10 +3,10 @@ const talkedRecently = new Set();
 
 require("dotenv/config")
 
-const Levels = require("discord-xp");
-Levels.setURL(process.env.MONGO_URL);
+
 
 module.exports = async(message, instance, client) => {
+  const Levels = client.levels;
     const m = message;
       if(config.IDs.channels.xpAllowed.includes(m.channelId)) {
         if (!m.guild) return;

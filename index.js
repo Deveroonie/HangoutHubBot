@@ -11,6 +11,10 @@ const mongoose = require("mongoose")
 const redis = require('quickredis-db')
 const db = redis.createClient(process.env.REDIS_URL)
 
+const Levels = require("discord-xp");
+Levels.setURL(process.env.MONGO_URL);
+client.levels = Levels;
+
 require("./systems/GiveawaySys")(client)
 client.on("ready", () => {
   new WOK({
