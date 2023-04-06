@@ -66,7 +66,32 @@ client.on("ready", () => {
 db.once("ready", () => {
   console.log("REDIS | Connected!")
 })
-//client.on("messageCreate", m => {
+
+
+client.on("messageCreate", async m => {
+  const talkedRecently = new Set();
+
+  if(config.IDs.channels.xpAllowed.includes(m.channel.id)) {
+    if (!m.guild) return;
+    if (m.author.bot) return;
+    if (talkedRecently.has(m.author.id)) { return; } else {
+    const randomAmountOfXp = Math.floor(Math.random() * config.xp.maxXpPerMessage) + config.xp.minXpPermMessage; // Min 1, Max 10
+    const hasLeveledUp = await levels.appendXp(m.author.id, m.guild.id, randomAmountOfXp);
+    if (hasLeveledUp) {
+      const user = await levels.fetch(m.author.id, m.guild.id);
+      m.channel.send({ content: `${m.author}, congratulations! You have leveled up to **${user.level}**. :tada:` });
+    }
+
+    talkedRecently.add(m.author.id);
+
+    
+}
+
+      setTimeout(() => {
+        talkedRecently.delete(m.author.id);
+      }, config.xp.gainDelay * 1000);
+  }
+})//client.on("messageCreate", m => {
 //  if(!m.content == "devsendverif") return;
 //  const row = new ActionRowBuilder()
 //  .addComponents(

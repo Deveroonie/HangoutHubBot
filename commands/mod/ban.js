@@ -84,6 +84,12 @@ if(!u.roles.cache.has(config.IDs.roles.administrator)) {
             .setDescription(`Sorry, but you have been banned from Hangout Hub.\n\nReason: ${reason}\nYou where banned by: ${us.tag}`)
             .setColor(config.embeds.ban.color)
             usrnm.send({embeds:{dm}})
+
+            const log = new EmbedBuilder()
+            .setTitle(config.embeds.logs.ban)
+            .setDescription(`Banned by: ${interaction.author.tag} <@${interaction.user.id}>\nUser banned: ${usrnm.tag} <@${usrnm.id}>\nReason: ${reason}`)
+            .setColor(config.embeds.logs.color)
+            client.channels.cache.get(config.IDs.channels.logs).send({embeds: [log]});
         } catch(err) {
           console.log("Failed to DM user.")
         }
