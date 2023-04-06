@@ -70,16 +70,20 @@ db.once("ready", () => {
 
 client.on("messageCreate", async m => {
   const talkedRecently = new Set();
-
   if(config.IDs.channels.xpAllowed.includes(m.channel.id)) {
     if (!m.guild) return;
     if (m.author.bot) return;
     if (talkedRecently.has(m.author.id)) { return; } else {
     const randomAmountOfXp = Math.floor(Math.random() * config.xp.maxXpPerMessage) + config.xp.minXpPermMessage; // Min 1, Max 10
-    const hasLeveledUp = await levels.appendXp(m.author.id, m.guild.id, randomAmountOfXp);
+    const hasLeveledUp = await Levels.appendXp(m.author.id, m.guild.id, randomAmountOfXp);
     if (hasLeveledUp) {
-      const user = await levels.fetch(m.author.id, m.guild.id);
+      const user = await Levels.fetch(m.author.id, m.guild.id);
       m.channel.send({ content: `${m.author}, congratulations! You have leveled up to **${user.level}**. :tada:` });
+      if(user.level == 5) { m.member.roles.add(config.IDs.roles.levels.lvl5) }
+      if(user.level == 10) { m.member.roles.add(config.IDs.roles.levels.lvl10) }
+      if(user.level == 15) { m.member.roles.add(config.IDs.roles.levels.lvl15) }
+      if(user.level == 20) { m.member.roles.add(config.IDs.roles.levels.lvl20) }
+
     }
 
     talkedRecently.add(m.author.id);
@@ -91,7 +95,12 @@ client.on("messageCreate", async m => {
         talkedRecently.delete(m.author.id);
       }, config.xp.gainDelay * 1000);
   }
-})//client.on("messageCreate", m => {
+})
+
+client.on("guildMemberAdd", m => {
+  client.channels.cache.get("1078825142706262087").send(`Welcome <@${m.id}> to the server!`)
+})
+//client.on("messageCreate", m => {
 //  if(!m.content == "devsendverif") return;
 //  const row = new ActionRowBuilder()
 //  .addComponents(
